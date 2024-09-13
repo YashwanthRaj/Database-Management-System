@@ -1,0 +1,31 @@
+Workspace:	csi6441_colloquium
+Username:	yashwanthraj6383@gmail.com
+Environment:	https://apex.oracle.com/pls/apex/
+
+
+
+
+Previous SQL:
+
+CREATE TABLE Supplier
+(
+  Email_ID VARCHAR(50) NOT NULL,
+  First_Name VARCHAR(50) NOT NULL,
+  Last_Name VARCHAR(50) NOT NULL,
+  Phone_Number INT NOT NULL,
+  Street_Name VARCHAR(50) NOT NULL,
+  ZIP_Code INT NOT NULL,
+  PRIMARY KEY (Email_ID)
+);
+
+CREATE TABLE Product
+(
+  Company VARCHAR(50) NOT NULL,
+  Product_Name VARCHAR(50) NOT NULL,
+  Price INT NOT NULL,
+  Quantity_Available INT NOT NULL,
+  Serial_No INT NOT NULL,
+  Email_ID VARCHAR(50) NOT NULL,
+  PRIMARY KEY (Serial_No),
+  FOREIGN KEY (Email_ID) REFERENCES Supplier(Email_ID)
+);
